@@ -62,7 +62,7 @@
 ArgumentParser <- function(..., python_cmd = NULL) { # nolint
     python_cmd <- find_python_cmd(python_cmd)
     assert_python_cmd(python_cmd)
-    initial_python_code <- c("import argparse",
+    initial_python_code <- c("import ctk_cli",
         "try:",
         "    import json",
         "except ImportError:",
@@ -78,7 +78,7 @@ ArgumentParser <- function(..., python_cmd = NULL) { # nolint
         "    else:",
         "        raise ValueError(\"could not convert string to logical: '{}'\".format(s))",
         "",
-        sprintf("parser = argparse.ArgumentParser(%s)",
+        sprintf("parser = ctk_cli.CLIArgumentParser(%s)",
                 convert_..._to_arguments("ArgumentParser", ...)),
         "")
     Parser$new(Code$new(python_cmd, initial_python_code), "parser")
