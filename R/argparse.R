@@ -325,11 +325,11 @@ convert_..._to_arguments <- function(mode, ...) { # nolint
     }
     # Set right default prog name if not specified, if possible
     # Do last to not screw up other fixes with prog insertion
-    if (mode == "ArgumentParser" && needs_prog(argument_names)) {
-        prog <- get_Rscript_filename()
-        if (is.na(prog)) prog <- "PROGRAM"
-        proposed_arguments <- c(sprintf("prog='%s'", prog), proposed_arguments)
-    }
+    # if (mode == "ArgumentParser" && needs_prog(argument_names)) {
+    #     prog <- get_Rscript_filename()
+    #     if (is.na(prog)) prog <- "PROGRAM"
+    #     proposed_arguments <- c(sprintf("prog='%s'", prog), proposed_arguments)
+    # }
     return(paste(proposed_arguments, collapse = ", "))
 }
 
