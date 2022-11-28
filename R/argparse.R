@@ -79,7 +79,7 @@ ArgumentParser <- function(..., python_cmd = NULL) { # nolint
         "        raise ValueError(\"could not convert string to logical: '{}'\".format(s))",
         "",
         sprintf("parser = ctk_cli.CLIArgumentParser(%s)",
-                convert_..._to_arguments("ArgumentParser", ...)),
+                convert_..._to_arguments("CLIArgumentParser", ...)),
         "")
     Parser$new(Code$new(python_cmd, initial_python_code), "parser")
 }
